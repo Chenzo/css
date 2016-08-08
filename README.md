@@ -19,6 +19,8 @@
     - [Variables](#variables)
     - [Mixins](#mixins)
     - [Nested selectors](#nested-selectors)
+    - [File Structure](#file-structure)
+    - [Responsive SCSS](#responsive-scss)
 
 ## Terminology
 
@@ -223,3 +225,87 @@ Again: **never nest ID selectors!**
 
 If you must use an ID selector in the first place (and you should really try not to), they should never be nested. If you find yourself doing this, you need to revisit your markup, or figure out why such strong specificity is needed. If you are writing well formed HTML and CSS, you should **never** need to do this.
 
+
+###File Structure
+
+We prefer to break up our .sass across multiple specifically named files
+
+``` ruby
+|--scss/
+   |--modules/
+   |--pages/
+   |--partials/
+   |--main.scss
+```
+
+* **modules** - functions and mixins and variables. Things that are included into other SCSS files.
+* **pages** - one .scss file per page - generally only specific to *that* page. (i.e. home.scss, about.scss, gallery.scss, etc..) Essentially the structure of the site.
+* **partials** - things that are considered part of the site's *skin* - i.e. buttons, inputs, media. These are reusable throughout the site.
+
+
+###Responsive SCSS
+
+We generally prefer to have each element/rule to have it's own responsive rule rather than blocks for each size. This might seem counter-intuitive, but makes for easier editing.
+
+**Bad**
+
+```scss
+.avatar{
+    border-radius:50%;
+    border:2px solid white; 
+}
+.images {
+    border: 5px;
+    width:50%;
+    display: inline-block;
+}
+#page {
+  padding: 10px;
+}
+
+@media #{$xlarge-up} { 
+  .avatar{
+    border-radius:0;
+    border:0;
+  }
+  .images {
+      width:100%;
+      display: block;
+  }
+  #page {
+    padding: 20px;
+  }
+}
+
+```
+
+**Good**
+
+```css
+.avatar{
+    border-radius:50%;
+    border:2px solid white; 
+
+    @media #{$xlarge-up} { 
+      border-radius:0;
+      border:0;
+    }
+}
+.images {
+    border: 5px;
+    width:50%;
+    display: inline-block;
+
+    @media #{$xlarge-up} { 
+      width:100%;
+      display: block;
+    }
+}
+#page {
+  padding: 10px;
+
+  @media #{$xlarge-up} { 
+    padding: 20px;
+  }    
+}
+```
