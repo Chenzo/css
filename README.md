@@ -237,9 +237,9 @@ We prefer to break up our .sass across multiple specifically named files
    |--main.scss
 ```
 
-* **modules** - functions and mixins and variables. Things that are included into other SCSS files.
-* **pages** - one .scss file per page - generally only specific to *that* page. (i.e. home.scss, about.scss, gallery.scss, etc..) Essentially the structure of the site.
-* **partials** - things that are considered part of the site's *skin* - i.e. buttons, inputs, media. These are reusable throughout the site.
+* **modules** - a folder that contains functions and mixins and variables. Things that are included into other SCSS files.
+* **pages** - a folder that contains one .scss file for each page - generally only specific css to *that* page. (i.e. home.scss, about.scss, gallery.scss, etc..) Essentially the structure of the site.
+* **partials** - a folder that contains things/elements that are considered part of the site's *skin* - i.e. buttons, inputs, media. These are reusable throughout the site.
 
 
 ###Responsive SCSS
@@ -248,7 +248,7 @@ We generally prefer to have each element/rule to have it's own responsive rule r
 
 **Bad**
 
-```scss
+```css
 .avatar{
     border-radius:50%;
     border:2px solid white; 
