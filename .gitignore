@@ -1,0 +1,25 @@
+
+node_modules
+node_modules/
+images/maps/
+
+.sass-cache/
+
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+
+
+
+#wordpress:
+wp-content/plugins/*
+wp-admin/
+wp-includes/*
+wp-content/themes/twentyeleven/*
+wp-content/themes/twentyfourteen/*
+wp-content/themes/twentytwelve/*
+wp-content/themes/twentyfifteen/*
+wp-content/themes/twentythirteen/*
+
