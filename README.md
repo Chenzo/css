@@ -1,4 +1,4 @@
-# Toll Brothers' CSS / Sass Styleguide
+# A CSS / Sass Styleguide
 
 *A mostly reasonable approach to CSS and Sass*
 
